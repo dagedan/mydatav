@@ -1,0 +1,58 @@
+body {
+  // background-color: black;
+  margin: 0;
+  padding: 0;
+  // color: #2ed08c;
+  color: white;
+  .container {
+    background-color: rgb(13, 22, 60);
+    transform-origin: 0 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: 0.3s;
+    .header {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url(https://img.alicdn.com/imgextra/i4/O1CN01yEgI3z1dYAjJDIFQJ_!!6000000003747-54-tps-2881-78.apng);
+      height: 56px;
+      width: 1920px;
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+      user-select: none;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 10px;
+    }
+    .left-panel {
+      user-select: none;
+      padding: 20px 0;
+      width: 470px;
+      height: 240px;
+      display: block;
+    }
+    .map-container {
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      .map-bottom {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+        background: rgb(13, 22, 60);
+        .quid {
+          height: 200px;
+          width: 30%;
+        }
+      }
+    }
+  }
+}

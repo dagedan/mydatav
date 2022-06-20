@@ -1,0 +1,52 @@
+<Row className={styles.header}>
+        业务数据智慧监测平台
+      </Row>
+      <Row>
+        <Col span={6}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Title labelMain="近6个月跨境总运量"></Title>
+            <div className={styles['left-panel']}>
+              <Area {...config} />
+            </div>
+            <Title labelMain="今日业务走势"></Title>
+            <div className={styles['left-panel']}>
+              <Area {...config} />
+            </div>
+            <Title labelMain="实时运营信息"></Title>
+            <div className={styles['left-panel']}>
+              <Area {...config} />
+            </div>
+          </div>
+        </Col>
+        <Col span={12}>
+          <div className={styles['map-container']}>
+            <div className={styles['map-bottom']}>
+              <div className={styles.quid}>
+                <Liquid></Liquid>
+              </div>
+              <div className={styles.quid}>
+                <Liquid></Liquid>
+              </div>
+              <div className={styles.quid}>
+                <Liquid></Liquid>
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col span={6}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Title labelMain="近6个月跨境总运量"></Title>
+            <div className={styles['left-panel']}>
+              <Colum {...config} />
+            </div>
+            <Title labelMain="今日业务走势"></Title>
+            <div className={styles['left-panel']}>
+              <Colum {...config} />
+            </div>
+            <Title labelMain="实时运营信息"></Title>
+            <div className={styles['left-panel']}>
+              <Colum {...config} />
+            </div>
+          </div>
+        </Col>
+      </Row>
