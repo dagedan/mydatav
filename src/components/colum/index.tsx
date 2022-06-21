@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Column } from '@ant-design/plots';
+import { Column } from '@antv/g2plot';
 
 const DemoColumn = () => {
   const data = [
