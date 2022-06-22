@@ -11,6 +11,7 @@ import {
   SaleRanking,
   CompanyScattered,
   ProducingAreaScattered,
+  Loading,
 } from '../components';
 import { p2 } from '../data/commonData';
 
@@ -23,6 +24,7 @@ interface State {
 
 export default function IndexPage() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [state, setState] = useSetState<State>({
     width: 1920,
     height: 1080,
@@ -38,6 +40,10 @@ export default function IndexPage() {
   };
   useEffect(() => {
     setScale();
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+    return () => timer && clearTimeout(timer);
   }, []);
   useEffect(() => {
     window.onresize = _.debounce(setScale, 1000);
@@ -54,6 +60,19 @@ export default function IndexPage() {
         transform: state.transForm,
       }}
     >
+      {loading && (
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            zIndex: 1002,
+            background: 'black',
+          }}
+        >
+          <Loading></Loading>
+        </div>
+      )}
       <div className={styles.header}>双江县茶产业概况</div>
       <Map></Map>
       <div className={styles.left}>

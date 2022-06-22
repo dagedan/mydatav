@@ -6,3 +6,4 @@ export { default as NumberCard } from './numberCard';
 export { default as SaleRanking } from './saleRanking';
 export { default as CompanyScattered } from './companyScattered';
 export { default as ProducingAreaScattered } from './producingAreaScattered';
+export { default as Loading } from './loading';

@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
+import styles from './index.less';
 import {
   LarkMap,
   Popup,
@@ -66,27 +67,44 @@ const Map = () => {
           closeButton={false}
           closeOnClick={false}
           anchor="bottom-left"
+          className={styles.tootlTip}
         >
-          <div style={{ color: 'red' }}>
-            <p>
-              <span>小茶树数量</span> {pointInfo?.smallTreeCount}
-            </p>
-            <p>
-              <span>中茶树数量</span> {pointInfo?.mediumTreeCount}
-            </p>
-            <p>
-              <span>中茶树数量</span> {pointInfo?.bigTreeCount}
-            </p>
-            <p>
-              <span>茶园数量</span>
-              {pointInfo?.yardCount}
-            </p>
-            <p>
-              <span>从业企业数量</span> {pointInfo?.companyCount}
-            </p>
-            <p>
-              <span>产量</span> {pointInfo?.output}
-            </p>
+          <div className={styles.description}>
+            <div style={{ display: 'flex', padding: '10px 0' }}>
+              <div className={styles.value}>
+                <span className={styles.town}>乡镇：</span> {pointInfo?.name}
+              </div>
+              <div className={styles.value}>
+                <span className={styles.town}>小茶树数量：</span>{' '}
+                {pointInfo?.smallTreeCount}
+              </div>
+            </div>
+            <div style={{ display: 'flex', padding: '10px 0' }}>
+              <div className={styles.value}>
+                <span className={styles.town}>中茶树数量：</span>{' '}
+                {pointInfo?.mediumTreeCount}
+              </div>
+              <div className={styles.value}>
+                <span className={styles.town}>古茶树数量：</span>{' '}
+                {pointInfo?.bigTreeCount}
+              </div>
+            </div>
+            <div style={{ display: 'flex', padding: '10px 0' }}>
+              <div className={styles.value}>
+                <span className={styles.town}>茶园数量：</span>{' '}
+                {pointInfo?.yardCount}
+              </div>
+              <div className={styles.value}>
+                <span className={styles.town}>从业企业数量：</span>{' '}
+                {pointInfo?.companyCount}
+              </div>
+            </div>
+            <div style={{ display: 'flex', padding: '10px 0' }}>
+              <div className={styles.value}>
+                <span className={styles.town}>产量：</span> {pointInfo?.output}
+              </div>
+              <div className={styles.value}></div>
+            </div>
           </div>
         </Popup>
       </LarkMap>
