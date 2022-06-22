@@ -4,7 +4,7 @@ import { arseNum } from '@/utils/common';
 import CountUp from 'react-countup';
 
 export default function Index({ data, mainColor, style }: any) {
-  const totalWidth = 360;
+  const totalWidth = 400;
   const total = data
     .map((i: any) => i.count)
     .reduce((a: number, v: number) => {
@@ -26,7 +26,7 @@ export default function Index({ data, mainColor, style }: any) {
       {data.map((i: any, index: number) => {
         return (
           <div key={i.name} style={{ marginTop: 10 }}>
-            <div style={{ display: 'flex', width: 360 }}>
+            <div style={{ display: 'flex', width: '100%' }}>
               <span style={{ flex: 1 }}>{`${index + 1} ${i.name}`}</span>
               <span>{arseNum(i.count)}</span>
             </div>

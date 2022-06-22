@@ -73,6 +73,15 @@ function CompanyScattered() {
     columnStyle: {
       radius: [20, 20, 0, 0],
     },
+    yAxis: {
+      label: {
+        autoHide: true,
+        autoRotate: false,
+      },
+      grid: {
+        line: { style: { stroke: '#ddd', lineWidth: 0.2, opacity: 0.6 } },
+      },
+    },
   };
 
   return (

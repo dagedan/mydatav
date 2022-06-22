@@ -88,7 +88,7 @@ export default function IndexPage() {
             <SaleRanking
               data={p2}
               mainColor={
-                'linear-gradient(180.01deg, #21DBA3 0.01%, rgba(33, 219, 163, 0.5) 99.99%)'
+                'linear-gradient(180.01deg, #22f2ff 0.01%, rgba(33, 219, 163, 0.5) 99.99%)'
               }
               style={{ marginTop: 25 }}
             />

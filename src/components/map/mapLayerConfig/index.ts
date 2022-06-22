@@ -34,7 +34,7 @@ export const mapConfig = {
   mapOptions: {
     pitch: 30,
     mapStyle: 'amap://styles/grey',
-    center: [99.828225, 23.472719],
+    center: [99.828225, 23.402719],
     zoom: 8,
     token: '3f730ff87182dd4ccf1446f014d94592',
   },
