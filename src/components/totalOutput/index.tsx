@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import styles from './index.less';
 import { Area } from '@ant-design/plots';
 
 const TotalOutputChart = () => {
@@ -35,6 +35,7 @@ const TotalOutputChart = () => {
     { type: '2022年5月', sales: parseInt(Math.random() * 100 + '') },
     { type: '2022年6月', sales: parseInt(Math.random() * 100 + '') },
   ];
+  // 22f2ff
   const config = {
     data,
     autoFit: true,
@@ -52,7 +53,18 @@ const TotalOutputChart = () => {
         autoHide: true,
         autoRotate: false,
       },
+      grid: null,
     },
+    yAxis: {
+      label: {
+        autoHide: true,
+        autoRotate: false,
+      },
+      grid: {
+        line: { style: { stroke: '#ddd', lineWidth: 0.2, opacity: 0.6 } },
+      },
+    },
+    line: { style: { stroke: '#22f2ff', lineWidth: 1, opacity: 1 } },
     meta: {
       type: {
         alias: '月份',
@@ -61,9 +73,15 @@ const TotalOutputChart = () => {
         alias: '产量',
       },
     },
+    smooth: true,
+    areaStyle: () => {
+      return {
+        fill: 'l(90) 1:#252f41 0.5:#6e80a2 1:#252f41',
+      };
+    },
   };
   return (
-    <div style={{ height: 200 }}>
+    <div className={styles.container}>
       <Area {...config} />
     </div>
   );
