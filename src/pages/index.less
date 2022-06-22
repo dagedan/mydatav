@@ -12,6 +12,8 @@ body {
     top: 50%;
     transition: 0.3s;
     .header {
+      z-index: 1;
+      letter-spacing: 12px;
       position: fixed;
       top: 0;
       left: 0;
@@ -30,32 +32,58 @@ body {
       justify-content: center;
       padding-bottom: 10px;
     }
-    .left-panel {
+    .left {
       user-select: none;
-      padding: 20px 0;
       width: 470px;
-      height: 240px;
       display: block;
-    }
-    .map-container {
-      width: 100%;
-      height: 100%;
-      opacity: 0.7;
-      .map-bottom {
-        position: absolute;
-        width: 100%;
-        height: 200px;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
+      position: absolute;
+      left: 0;
+      top: 56px;
+      bottom: 0;
+      background: linear-gradient(
+          1turn,
+          rgba(8, 8, 9, 0.2) 1.34%,
+          rgba(43, 45, 48, 0.2)
+        ),
+        linear-gradient(
+          90.43deg,
+          rgba(43, 45, 48, 0.3) 0.42%,
+          rgba(8, 8, 9, 0.8) 54.54%
+        );
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      .leftBg {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        // height: calc(100vh-56px);
+        height: 100%;
         display: flex;
-        flex-direction: row;
-        background: rgb(13, 22, 60);
-        .quid {
-          height: 200px;
-          width: 30%;
+        flex-direction: column;
+        .i {
+          flex: 1;
+          padding: 0 16px;
         }
       }
+    }
+
+    .right {
+      user-select: none;
+      width: 470px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 56px;
+      bottom: 0;
+      background: linear-gradient(
+          1turn,
+          rgba(8, 8, 9, 0.2) 1.34%,
+          rgba(43, 45, 48, 0.2)
+        ),
+        linear-gradient(
+          90.43deg,
+          rgba(43, 45, 48, 0) 0.42%,
+          rgba(8, 8, 9, 0) 54.54%
+        );
+      transform: matrix(1, 0, 0, 1, 0, 0);
+      padding: 0 16px;
     }
   }
 }

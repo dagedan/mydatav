@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import styles from './index.less';
 import customTheme from './theme';
-// import { G2 } from '@antv/g2plot';
 import _ from 'lodash';
 import { useSetState, useSize } from 'ahooks';
 // import { Col, Row } from 'antd';
 // import { Area } from '@antv/g2plot';
-import { Title, Map, Liquid, Colum } from '../components';
+import { Title, Map, TotalOutput, Card } from '../components';
 
 interface State {
   transForm: string;
@@ -48,8 +47,51 @@ export default function IndexPage() {
         transform: state.transForm,
       }}
     >
+      <div className={styles.header}>{/* 双江县茶产业概况 */}</div>
       <Map></Map>
-      <div className={styles.header}></div>
+      <div className={styles.left}>
+        <div className={styles.leftBg}>
+          <div className={styles.i}>
+            <Title
+              labelMain="成品茶总产量"
+              labelSub="近3年成品茶总产量走势"
+            ></Title>
+            <TotalOutput></TotalOutput>
+          </div>
+          <div className={styles.i}>
+            <Title
+              labelMain="树龄茶产量"
+              labelSub="近3年成品茶树龄茶产量走势"
+            ></Title>
+            <TotalOutput></TotalOutput>
+          </div>
+          <div className={styles.i}>
+            <Title
+              labelMain="季节茶产量"
+              labelSub="近3年季节茶产量走势"
+            ></Title>
+            <TotalOutput></TotalOutput>
+          </div>
+        </div>
+      </div>
+      <div className={styles.right}>
+        <div style={{ display: 'flex' }}>
+          <Card
+            label={'2022总产量(吨)'}
+            value={18000}
+            style={{ flex: 1 }}
+          ></Card>
+          <Card
+            label={'从业企业数量(家)'}
+            value={3000}
+            style={{ flex: 1 }}
+          ></Card>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <Card label={'茶叶株数(吨)'} value={17389} style={{ flex: 1 }}></Card>
+          <Card label={'茶园数量'} value={5019} style={{ flex: 1 }}></Card>
+        </div>
+      </div>
     </div>
   );
 }
